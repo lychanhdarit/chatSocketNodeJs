@@ -1,0 +1,35 @@
+body{
+    background: #d8d8d8
+}
+#list-msg{
+    background: #f3f3f3; 
+    min-height: 100px;
+}
+
+#list-msg li{ 
+    padding: 3px;
+    margin-bottom: 1px;
+    list-style: none;
+    margin-left: -40px;
+    font-size: 12px;
+}
+#list-user li{
+    background: #fff;
+    padding: 5px;
+    margin-bottom: 1px;
+    list-style: none;
+    margin-left: -40px;
+}
+#list-room li{
+    background: #fff;
+    padding: 5px;
+    margin-bottom: 1px;
+    list-style: none;
+    margin-left: -40px;
+}
+#chatForm{
+    margin-top:10px;
+}
+#msg-box{
+    font-size: 10px;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Chat NODEJS - SOCKET.IO</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://lychanhdaric.herokuapp.com/socket.io/socket.io.js"> </script>
+    <script src="https://lychanhdaric.herokuapp.com/xuly.js"> </script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+    <link href="https://lychanhdaric.herokuapp.com/style.css" rel="stylesheet"   >
+</head>
+<body > 
+	<div class="container" style="margin-top: 10px;max-width: 800px;padding:10px;background: #d8d8d8">
+        <div id="loginForm" class="row">
+           <div class="col-md-6">
+                <div class="row">
+                        <div class="col-md-12">
+                                <h1>Tên của bạn?</h1>
+                                <hr/>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="txtname" class="form-control" placeholder="Name"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="btnReg" class="btn btn-success">Đăng ký</div>
+                        </div>
+                </div>
+           </div>
+           <div class="col-md-6" style="display:none">
+                <div class="row">
+                        <div class="col-md-12">
+                                <h1>Đã có tài khoản</h1>
+                                <hr/>
+                        </div>
+                        <div class="col-md-8">
+                            <input type="text" id="txtname2" class="form-control" placeholder="Name"/>
+                        </div>
+                        <div class="col-md-4">
+                            <div id="btnReg2" class="btn btn-success">Đăng ký</div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div id="chatForm" >
+                <div class="row">
+                    <div class="col-md-4">
+                            <div id="box-user" class="box-mesage">
+                                    <div class=" text-left ">
+                                            <input type="text" id="txtRoom" class="form-control" placeholder="Name"/>
+                                            <hr/>
+                                          <span id="btnTaoRoom" class="btn btn-primary">Tạo room</span>
+                                    </div>
+                                    <h3 >Phòng chat</h3>
+                                    <ul id="list-room">
+                                    
+                                    </ul>
+                                    <h3>Contact</h3>
+                                    
+                                    <ul id="list-user">
+                                    
+                                    </ul>
+                            </div>
+                    </div>
+                    <div class="col-md-8">
+                            <div class="sayHi text-right ">
+                                Hello <b id="currentUser"></b> <span id="btnLogOut" style="cursor: pointer;">LogOut</span>
+                            </div>
+                            <div class="box-mesage">
+                                    <h3 id="currentRom">Message</h3> <input id="hiddenPhong" name="prodId" type="hidden" value="">
+                                    <ul id="list-msg">
+                                    
+                                    </ul>
+                            </div>
+                            <div id="msg-box">
+
+                            </div>
+                                <hr/>
+                                    <div class="row">
+                                       
+                                        <div class="col-md-12"> 
+                                                <textarea name="message" rows="3" cols="30" id="txtMessage" class="form-control" placeholder="nội dung tin nhắn..."> </textarea>
+                                            </div> 
+                                    </div>
+                                    <hr/>
+                                    <div class="row">
+                                            <div class="col-md-12">
+                                                    <div id="btn" class="btn btn-success">Send</div>
+                                            </div>
+                                    </div>
+                    </div>
+                </div>
+                    
+        </div>
+	</div>
+
+</body>
+</html>
