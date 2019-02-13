@@ -5,7 +5,7 @@ app.set("view engine","ejs");
 app.set("views","./views");
 var server = require("http").Server(app);
 var io = require("socket.io")(server);
-server.listen(process.evn.PORT||8000,()=>{console.log("App running...");});
+server.listen(process.env.PORT||8000);
 
 var dataUser=[];
 
