@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Trang chủ</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="socket.io/socket.io.js"> </script>
+	<script>
+		var socket = io("http://192.168.0.150:8000");
+		 socket.on('Server-send-data', function (data) {
+			$("#list").append("<li>"+data+"</li>");
+		});
+		$(document).ready(function(){
+			$("#txtMessage").keyup(function(event) {
+				if(event.keyCode === 13) {
+					$("#btn").click();
+				}
+			});    
+			$("#btn").click(()=>{
+				socket.emit('Client-send-data',"<b>"+$("#txtname").val()+": </b>"+$("#txtMessage").val());
+				$("#txtMessage").val("");
+			});
+		});
+	</script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+</head>
+<body > 
+	<style>
+		li{
+			background: #fff;
+			padding: 10px;
+			margin-bottom: 1px;
+			list-style: none;
+			margin-left: -40px;
+		}
+	</style>
+	<div class="container" style="margin-top: 10px;max-width: 400px;padding:10px;background: #d8d8d8">
+		<div>
+			<ul id="list">
+			
+			</ul>
+		</div>
+		<hr/>
+		<div class="row">
+			<div class="col-md-4">
+					<input type="text" id="txtname" class="form-control" placeholder="Name"/>
+			</div>
+			<div class="col-md-8">
+					<input type="text" id="txtMessage" class="form-control" placeholder="Message"/>
+				</div> 
+		</div>
+		<hr/>
+		<div class="row">
+				<div class="col-md-12">
+						<div id="btn" class="btn btn-success">Send</div>
+				</div>
+		</div>
+	</div>
+
+</body>
+</html>
