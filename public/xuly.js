@@ -1,4 +1,4 @@
-var socket = io("http://192.168.0.150:8000");
+var socket = io("https://lychanhdaric.herokuapp.com");
         //lắng nghe chat tất cả
 		socket.on('server-send-data', function (data) {
 			$("#list-msg").append("<li><b>"+data.us+"</b>: "+data.msg+"</li>");
